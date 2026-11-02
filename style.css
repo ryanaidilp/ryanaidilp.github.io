@@ -27,7 +27,56 @@ dl.skills{display:grid;grid-template-columns:10rem 1fr;gap:.4rem 1rem;margin:0}d
 .foot{margin-top:3rem;color:var(--mute);font-size:.85rem}
 .actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}.btn{display:inline-block;border:1px solid var(--rule);border-radius:8px;padding:.4rem .8rem;text-decoration:none;font-size:.9rem}
 @media (max-width:560px){dl.skills{grid-template-columns:1fr}dl.skills dt{margin-top:.5rem}}
+
+/* ---- Resume: dense two-column one-pager ---- */
+body.resume{--max:68rem}
+body.resume header{background:var(--accent);color:#fff;margin:0 -1.25rem;padding:2rem 1.25rem 1.5rem}
+body.resume header a{color:#fff}
+body.resume .kicker{display:none}
+body.resume header h1{font-size:2.4rem}
+body.resume header .role{color:rgba(255,255,255,.85)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin:0 -1.25rem;border-bottom:1px solid var(--rule)}
+.stats div{padding:1rem 1.25rem;border-right:1px solid var(--rule)}.stats div:last-child{border-right:0}
+.stats dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+.stats dd{margin:.2rem 0 0;font-size:1.35rem;font-weight:700;letter-spacing:-.01em}.stats dd i{font-style:normal;font-weight:400;color:var(--mute);font-size:.85rem}
+body.resume .summary{margin:1.75rem 0 0;font-size:1.05rem;max-width:62ch}
+.cols{display:block}
+body.resume .cols{display:grid;grid-template-columns:minmax(0,1fr) 19rem;gap:0 3rem;margin-top:.5rem}
+body.resume .side{border-left:1px solid var(--rule);padding-left:1.75rem}
+body.resume .side .proj{padding-left:0;list-style:none;font-size:.9rem}
+body.resume .side dl.skills{grid-template-columns:1fr}body.resume .side dl.skills dt{margin-top:.6rem}
+body.resume h2{color:var(--accent);border-bottom:0;padding-bottom:0}
+/* ---- CV: editorial long-form with a date rail ---- */
+body.cv{--max:56rem;--bg:#fbf9f4;--rule:#dcd5c4;--chip:#f1ece0}
+@media (prefers-color-scheme:dark){body.cv{--bg:#14120e;--rule:#383327;--chip:#1e1b14}}
+body.cv{font-family:Georgia,"Times New Roman",serif;font-size:17px}
+body.cv nav.top,body.cv .toc,body.cv .kicker,body.cv dl.skills dt{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+body.cv header{margin-bottom:1rem}
+body.cv .kicker{margin:0 0 .5rem;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+body.cv header h1{font-size:3rem;font-weight:400;letter-spacing:-.03em}
+body.cv .toc{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;position:sticky;top:0;background:var(--bg);padding:.7rem 0;border-block:1px solid var(--rule);font-size:.85rem;z-index:2;margin-top:1.5rem}
+body.cv .toc a{color:var(--mute);text-decoration:none}body.cv .toc a:hover{color:var(--accent)}
+body.cv .summary{font-size:1.2rem;line-height:1.6;margin:2rem 0 0}
+body.cv .cols{counter-reset:sec}
+body.cv h2{counter-increment:sec;font-family:Georgia,serif;font-size:1.6rem;font-weight:400;text-transform:none;letter-spacing:0;color:var(--fg);border-bottom:0;margin:3.5rem 0 1.25rem;scroll-margin-top:3.5rem}
+body.cv h2:before{content:counter(sec,decimal-leading-zero);display:block;font:600 .75rem system-ui,sans-serif;letter-spacing:.14em;color:var(--accent);margin-bottom:.35rem}
+body.cv .job{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:0 1.5rem;border-top:1px solid var(--rule);padding-top:1.25rem}
+body.cv .job .head{display:contents}
+body.cv .job .when{grid-column:1;grid-row:1 / span 3;font:.85rem system-ui,sans-serif}
+body.cv .job h3,body.cv .job .meta:not(.when),body.cv .job ul,body.cv .job .tech{grid-column:2}
+body.cv .job h3{font-size:1.15rem;font-weight:400}body.cv .job .co{font-weight:700}
+body.cv .side dl.skills{grid-template-columns:12rem 1fr}
+@media (max-width:900px){body.resume .cols{display:block}body.resume .side{border:0;padding:0}.stats{grid-template-columns:repeat(2,1fr)}.stats div:nth-child(2){border-right:0}}
+@media (max-width:640px){body.cv header h1{font-size:2.2rem}body.cv .job{display:block}body.cv .job .head{display:flex}body.cv .job .when{margin:.2rem 0}body.resume header h1{font-size:1.9rem}}
+@media (prefers-reduced-motion:no-preference){a{transition:color .15s}}
 @media print{@page{size:A4;margin:14mm}body{font-family:Arial,Helvetica,sans-serif}h2{letter-spacing:0}:root{--bg:#fff;--fg:#000;--mute:#444;--rule:#bbb;--accent:#0b3fd0;--chip:#fff}
 body{font-size:10.5pt;line-height:1.4}.wrap{max-width:none;padding:0}nav.top,.actions,.foot,.skip{display:none}
 a{color:inherit;text-decoration:none}.proj a[href]:after,.pubs a[href]:after{content:" (" attr(href) ")";font-size:8pt;color:#444}
-h2{margin-top:1rem}header h1{font-size:20pt}.job{margin-bottom:.8rem}}
+h2{margin-top:1rem}header h1{font-size:20pt}.job{margin-bottom:.8rem}
+body.resume header,body.cv header{background:none;color:#000;margin:0;padding:0}body.resume header a{color:inherit}
+body.resume .kicker{display:none}.stats,.toc{display:none}
+body.resume .cols,body.cv .job{display:block}body.resume .side{border:0;padding:0}body.cv .job .head{display:flex}
+body.cv{font-family:Arial,Helvetica,sans-serif;font-size:10.5pt;--bg:#fff}body.cv h2,body.resume h2{font-family:Arial,Helvetica,sans-serif;font-size:9.5pt;text-transform:uppercase;color:#000;margin:1rem 0 .4rem;border-bottom:1px solid #bbb}
+body.cv h2:before{display:none}body.cv header h1{font-size:20pt;font-weight:700}body.cv .summary,body.resume .summary{font-size:10.5pt;margin:.6rem 0 0}body.cv .job{border:0;padding:0}
+body.resume dl.skills,body.cv dl.skills{grid-template-columns:9rem 1fr}.cols{display:block}
+}
