@@ -79,4 +79,5 @@ body.resume .cols,body.cv .job{display:block}body.resume .side{border:0;padding:
 body.cv{font-family:Arial,Helvetica,sans-serif;font-size:10.5pt;--bg:#fff}body.cv h2,body.resume h2{font-family:Arial,Helvetica,sans-serif;font-size:9.5pt;text-transform:uppercase;color:#000;margin:1rem 0 .4rem;border-bottom:1px solid #bbb}
 body.cv h2:before{display:none}body.cv header h1{font-size:20pt;font-weight:700}body.cv .summary,body.resume .summary{font-size:10.5pt;margin:.6rem 0 0}body.cv .job{border:0;padding:0}
 body.resume dl.skills,body.cv dl.skills{grid-template-columns:9rem 1fr}.cols{display:block}
+*{font-family:Arial,Helvetica,sans-serif!important}code,code *{font-family:"Courier New",monospace!important}body,body.cv{font-size:10pt;line-height:1.35}.job{margin-bottom:.6rem}.job li{margin:.2rem 0}body.resume h2,body.cv h2{margin:.8rem 0 .3rem}.wrap{padding:0}
 }
